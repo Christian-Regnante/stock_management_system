@@ -1,11 +1,35 @@
-###stock_management_system
+# Stock Management System
 
-##This is the beginnning of our summative and I want each one of to clone this repo.
-#1. After cloning each one of you should create their own branche.
-#2. Start to work on the tasks which have beeen already created for you
-#3. Each individual should work on the functions which are here in order to get basic understanding of the project
-#4. Note work on it on your own as it will help us to get your way of designing 
-#5. Remember we are not Wednesday after class we will have to meet and here from your approach
+## Project Overview
+This repository serves as the foundation for our summative project. Each team member is required to contribute by following the outlined steps to ensure smooth collaboration and a better understanding of the system.
+
+## Getting Started
+### Cloning the Repository
+1. Clone this repository using the following command:
+   ```sh
+   git clone <repository_url>
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd stock_management_system
+   ```
+
+### Branching
+Each team member must create their own branch before making changes:
+   ```sh
+   git checkout -b <your_branch_name>
+   ```
+
+## Contribution Guidelines
+1. Work on the assigned tasks that have been created for you.
+2. Familiarize yourself with the existing functions to understand the project structure.
+3. Ensure you work independently to showcase your unique approach to problem-solving and design.
+4. We will meet on **Wednesday after class** to discuss and review each approach.
+
+## Important Notes
+- **Do not use AI tools** to generate your solutions. We will verify and track inconsistencies in explanations.
+- Ensure your work follows best practices and is well-documented.
+
+Happy coding!
 
 
-#NOTE: Make sure you do not use AI we can easily track in case your explanation is not matching
