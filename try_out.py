@@ -89,6 +89,20 @@ while True:
     elif choice == 4:
         print("\n____YOUR REPORT____\n")
 
+        while True:
+            print("1. Generate Full Report")
+            print("2. Generate Report For A Specific Product")
+            print("3. Return To The 'Main Page'")
+            choose = int(input("Enter your choice: N°_"))
+
+            if choose == 1:
+                pass
+
+            elif choose == 2:
+                pass
+
+            elif choose == 3:
+                break
 
         print("\n")
 
