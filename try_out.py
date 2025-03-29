@@ -3,13 +3,9 @@
 imports = {}  #"Spaghetti": ["20", "2100", "20 * 2100 ", "27/March/2025 "],
     #"Cabbage ": ["13", 1200", "13 * 1200" , "27/March/2025 "]"   
 
-exports = {
-    "product_name": ["quantity", "selling_price", "total_sold_price", "export_date", "Profit/loss"]
-}
+exports = {} # "product_name": ["quantity", "selling_price", "total_sold_price", "export_date", "Profit/loss"]
 
-stocked_products = {
-    "product_name": ["remaining_quantity", "selling_price", "total_selling_price"]
-}
+stocked_products = {}   #"product_name": ["remaining_quantity", "selling_price", "total_selling_price"]
 
 #Usage of join to make a report of what have been bought, sold, income and the remaining products.
 
@@ -35,17 +31,19 @@ while True:
             choose = int(input("Enter your choice: N°_"))
 
             if choose == 1:
-                pass
+                print(imports)
 
             elif choose == 2:
                 product_name =input("Enter product's name ")
-                quantity =input("What is the total quantity of your product ")
-                unit_buying_price =input("Buying price for one product ")
+                quantity =int(input("What is the total quantity of your product "))
+                unit_buying_price =int(input("What is the price for one quantity"))
                 total_buying_price = quantity * unit_buying_price 
                 date_imported = input("Enter the date in this format:date/month/year ")
-
                 
+                imports[product_name] = [quantity,unit_buying_price,total_buying_price,date_imported]
 
+                stocked_products[product_name] = [quantity,unit_buying_price,total_buying_price]
+                
 
             elif choose == 3:
                 break
@@ -64,11 +62,31 @@ while True:
             choose = int(input("Enter your choice: N°_"))
 
             if choose == 1:
-                pass
+                print(exports)
 
             elif choose == 2:
-                pass
+                product_name =input("What is the product name ")
+                quantity =int(input("What is the quantity"))
+                unit_selling_price =int(input("What is the unit selling price"))
+                total_selling_price = quantity * unit_selling_price
+                date_exported =input("Enter the date in this format:Date/Month/Year")
 
+                if unit_selling_price > stocked_products[product_name][1]:
+                    profit_loss = "profit"
+
+                elif unit_selling_price <= stocked_products[product_name][1]:    
+                    profit_loss = "loss"
+
+                exports[product_name] = [quantity,unit_selling_price,total_selling_price,date_exported,profit_loss] 
+
+                remaining_quantity = stocked_products[product_name][0] - exports[product_name][0]
+
+                total_buying_price = remaining_quantity * stocked_products[product_name][1]
+
+                stocked_products.update({product_name: [remaining_quantity,stocked_products[product_name][1],total_buying_price]})
+
+
+                
             elif choose == 3:
                 break
 
@@ -85,9 +103,9 @@ while True:
             choose = int(input("Enter your choice: N°_"))
 
             if choose == 1:
-                pass
+                print(stocked_products)
 
-            elif choose == 3:
+            elif choose == 2:
                 break
 
         print("\n")
