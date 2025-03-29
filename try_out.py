@@ -1,8 +1,7 @@
 # CODES THAT ARE IN COMMENTS ARE FOR LATER USE. DON'T REMOVE THEM
 
-imports = {
-    "product_name": ["quantity", "buying_price", "total_buying_price", "import_date"]
-}
+imports = {}  #"Spaghetti": ["20", "2100", "20 * 2100 ", "27/March/2025 "],
+    #"Cabbage ": ["13", 1200", "13 * 1200" , "27/March/2025 "]"   
 
 exports = {
     "product_name": ["quantity", "selling_price", "total_sold_price", "export_date", "Profit/loss"]
@@ -39,7 +38,14 @@ while True:
                 pass
 
             elif choose == 2:
-                pass
+                product_name =input("Enter product's name ")
+                quantity =input("What is the total quantity of your product ")
+                unit_buying_price =input("Buying price for one product ")
+                total_buying_price = quantity * unit_buying_price 
+                date_imported = input("Enter the date in this format:date/month/year ")
+
+                
+
 
             elif choose == 3:
                 break
