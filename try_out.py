@@ -17,8 +17,8 @@ stocked_products = {
 while True:
     print("\n____ MAIN PAGE ____\n")
 
-    print("1. Import Your Products")
-    print("2. Exports Your Sold Products")
+    print("1. Add New Products")
+    print("2. Remove Sold Products")
     print("3. Check Your Stock")
     print("4. Get Report")
     print("5. Exit")
