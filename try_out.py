@@ -5,7 +5,6 @@ exports = {}
 stocked_products = {}
 
 # Usage of join to make a report of what has been bought, sold, income, and the remaining products.
-
 def add_to_imports():
     """Add a new product to the imports dictionary."""
     product_name = input("Enter the product name: ").strip().lower()
@@ -32,17 +31,7 @@ def add_to_exports():
 
     exports[product_name] = [quantity, selling_price, total_sold_price, export_date, profit_loss]
     print(f"Product '{product_name}' added to exports successfully!")
-
-def add_to_stock():
-    """Add or update a product in the stocked_products dictionary."""
-    product_name = input("Enter the product name: ").strip().lower()
-    remaining_quantity = int(input("Enter the remaining quantity: "))
-    selling_price = float(input("Enter the selling price per unit: "))
-    total_selling_price = remaining_quantity * selling_price
-
-    stocked_products[product_name] = [remaining_quantity, selling_price, total_selling_price]
-    print(f"Product '{product_name}' added/updated in stock successfully!")
-
+    
 while True:
     print("\n____ MAIN PAGE ____\n")
     print("1. Import Your Products")
@@ -89,24 +78,6 @@ while True:
         print("\n")
 
     elif choice == 3:
-        print("\n____YOUR STOCK____\n")
-        while True:
-            print("1. View Your Stock")
-            print("2. Add/Update Stock")
-            print("3. Return To The 'Main Page'")
-            choose = int(input("Enter your choice: N°_"))
-
-            if choose == 1:
-                print("\nStocked Products:")
-                for product, details in stocked_products.items():
-                    print(f"{product}: {details}")
-            elif choose == 2:
-                add_to_stock()
-            elif choose == 3:
-                break
-        print("\n")
-
-    elif choice == 4:
         print("\n____YOUR REPORT____\n")
         while True:
             print("1. Generate Full Report")
@@ -129,7 +100,7 @@ while True:
                 break
         print("\n")
 
-    elif choice == 5:
+    elif choice == 4:
         print("\nEXITING....")
         break
 
