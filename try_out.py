@@ -39,7 +39,10 @@ while True:
                 pass
 
             elif choose == 2:
-                pass
+                print("Select the unit type:")
+                print("1. Kilogram (Kg)")
+                print("2. Litre (L)")
+                print("3. Piece (Pcs)")
 
             elif choose == 3:
                 break
