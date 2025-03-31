@@ -191,6 +191,64 @@ class Stock:
         cursor.close()
 
 # Search class
+class Search:
+    def __init__(self, connection):
+        self.connection = connection
+
+    def search_imports(self, product_name):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM imports WHERE product_name = %s", (product_name,))
+        import_rows = cursor.fetchone()
+        if import_rows:
+            print(f"\n{'Product Name:':<25} {import_rows[0]:<20}")
+            print(f"{'Quantity:':<25} {import_rows[1]:<20}")
+            print(f"{'Unit:':<25} {import_rows[2]:<20}")
+            print(f"{'Buying Price:':<25} {import_rows[3]:<20}")
+            print(f"{'Total Buying Price:':<25} {import_rows[4]:<20}")
+            get_date = str(import_rows[5])
+            print(f"{'Import Date:':<25} {get_date:<20}")
+        else:
+            print(f"\n____{product_name} is not found in imports!____\n")
+        
+        cursor.close()
+
+    def search_exports(self, product_name):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM exports WHERE product_name = %s", (product_name,))
+        export_rows = cursor.fetchall()
+        count = 0
+        if export_rows:
+            for row in export_rows:
+                count += 1
+                print(f"\nRECORD N°_{count}\n")
+                print(f"{'Product Name:':<25} {row[0]:<20}")
+                print(f"{'Quantity:':<25} {row[1]:<20}")
+                print(f"{'Unit:':<25} {row[2]:<20}")
+                print(f"{'Selling Price:':<25} {row[3]:<20}")
+                print(f"{'Total Sold Price:':<25} {row[4]:<20}")
+                get_date = str(row[5])
+                print(f"{'Export Date:':<25} {get_date:<20}")
+                print(f"{'Profit/Loss:':<25} {row[6]:<20}")
+        else:
+            print(f"\n____{product_name} is not found in exports!____\n")
+        
+        cursor.close()
+
+    def search_stock(self, product_name):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM stocked_products WHERE product_name = %s", (product_name,))
+        stock_rows = cursor.fetchone()
+        if stock_rows:
+            print(f"\n{'Product Name:':<25} {stock_rows[0]:<20}")
+            print(f"{'Quantity:':<25} {stock_rows[1]:<20}")
+            print(f"{'Unit:':<25} {stock_rows[2]:<20}")
+            print(f"{'Buying Price:':<25} {stock_rows[3]:<20}")
+            print(f"{'Total Buying Price:':<25} {stock_rows[4]:<20}")
+            print(f"{'Selling Price:':<25} {stock_rows[5]:<20}")
+        else:
+            print(f"\n____{product_name} is not found in stock!____\n")
+        
+        cursor.close()
 # Report class
 class Report:
     def __init__(self, connection):
@@ -318,7 +376,7 @@ manage_import = Import(connection)
 manage_export = Export(connection)
 manage_stock = Stock(connection)
 manage_report = Report(connection)
-
+manage_search = Search(connection)
 
 
 while True:
