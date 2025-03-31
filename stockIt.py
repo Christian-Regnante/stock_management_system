@@ -4,6 +4,7 @@ import os
 import sys
 import subprocess
 import platform
+from datetime import datetime  # Add this import for handling date and time
 
 class StockManager:
     def __init__(self):
@@ -48,15 +49,18 @@ class StockManager:
         while True:
             print("1. Imported Products")
             print("2. Import New Product(s)")
-            # print("#. Delete Option for Imported products")
-            # print("#. Update Option for exported products")
             print("3. Return To The 'Main Page'")
             choose = int(input("Enter your choice: N°_"))
 
             if choose == 1:
                 pass
             elif choose == 2:
-                pass
+                product_name = input("Enter product name: ")
+                quantity = int(input("Enter quantity: "))
+                buying_price = float(input("Enter buying price: "))
+                import_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Automatically add current date and time
+                print(f"Product '{product_name}' imported successfully on {import_date}.")
+                # Add logic to save this data
             elif choose == 3:
                 break
         print("\n")
@@ -66,15 +70,18 @@ class StockManager:
         while True:
             print("1. Exported Products")
             print("2. Export Sold Product(s)")
-            # print("#. Delete Option for exported products")
-            # print("#. Update Option for exported products")
             print("3. Return To The 'Main Page'")
             choose = int(input("Enter your choice: N°_"))
 
             if choose == 1:
                 pass
             elif choose == 2:
-                pass
+                product_name = input("Enter product name: ")
+                quantity = int(input("Enter quantity: "))
+                selling_price = float(input("Enter selling price: "))
+                export_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Automatically add current date and time
+                print(f"Product '{product_name}' exported successfully on {export_date}.")
+                # Add logic to save this data
             elif choose == 3:
                 break
         print("\n")
