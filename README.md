@@ -48,11 +48,11 @@ stock-management-system/
 ## Future Enhancements
 - Implement a graphical user interface (GUI) for better usability.
 - Add reminder functionality
-- Automatate the program to generate reports and save them.
+- Automate the program to generate reports and save them.
 
 ## License
 This project is licensed under the MIT License. See `LICENSE` for more details.
 
 ---
 
-Happy coding! 
+Happy coding!
