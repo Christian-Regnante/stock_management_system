@@ -235,6 +235,31 @@ class Report:
             print(f"{row[0]:<20} | {remaining_quantity_with_unit:<30} | {row[3]:<20} | {row[5]:<20} | {row[4]:<25}")
         print("-" * 125)
 
+        #Report summary
+        print("\n", " " * 20, "____Report Summary____\n")
+        imports_count = len(imports)
+        export_counts = len(exports)
+        stock_count = len(stock)
+                
+
+        print("____IMPORTS____")
+        print(f"{'Total Imported Products':<40} : {imports_count:<20}")
+        print(f"{'Total Spent on Imports(FRW)':<40} : {sum(row[4] for row in imports):<20}")
+        var_point = 0
+        for count_import in imports:
+            for count_stock in stock:
+                var_point = count_import[1] * count_stock[5] + var_point
+        print(f"{'Expected Total Selling Point(FRW)':<40} : {var_point:<20}")
+        print(f"{'Expected Income(FRW)':<40} : {var_point - sum(row[4] for row in imports):<20}")
+        print("_" * 60)
+        print()
+
+        print("____STOCK____")
+        print(f"{'Total Products In The Stock':<45} : {stock_count:<20}")
+        print(f"{'Total Value Of The Remaining Products(FRW)':<45} : {sum(row[4] for row in stock):<20}")
+        print("_" * 60)
+        print()
+
         cursor.close()
 
     def generate_product_report(self, product_name):
