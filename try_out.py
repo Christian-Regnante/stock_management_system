@@ -7,7 +7,7 @@ stocked_products = {}
 # Usage of join to make a report of what has been bought, sold, income, and the remaining products.
 def add_to_imports():
     """Add a new product to the imports dictionary."""
-    product_name = input("Enter the product name: ").strip().lower()
+    product_name = input("Pass the product name: ").strip().lower()
     quantity = int(input("Enter the quantity: "))
     buying_price = float(input("Enter the buying price per unit: "))
     total_buying_price = quantity * buying_price
@@ -18,7 +18,7 @@ def add_to_imports():
 
 def add_to_exports():
     """Add a new product to the exports dictionary."""
-    product_name = input("Enter the product name: ").strip().lower()
+    product_name = input("pass the product name: ").strip().lower()
     if product_name not in imports:
         print(f"Error: '{product_name}' is not in imports. Add it to imports first.")
         return
@@ -91,7 +91,7 @@ while True:
                 print("Exports:", exports)
                 print("Stock:", stocked_products)
             elif choose == 2:
-                product_name = input("Enter the product name: ").strip()
+                product_name = input("Pass the product name: ").strip()
                 print("\nReport for Product:")
                 print("Imports:", imports.get(product_name, "Not Found"))
                 print("Exports:", exports.get(product_name, "Not Found"))
