@@ -6,10 +6,10 @@ def create_connection():
     connection = None
     try:
         connection = MySQLdb.connect(
-            host="localhost",
-            user="root",
-            password="root",
-            db="stock_system"
+            host="localhost", #you can change this to your host address
+            user="root", # you can change this to your username
+            password="root", # you can change this to your password
+            db="stock_system" # you can change this to your database name
         )
         print(welcome_msg)
     except Error as e:
