@@ -28,10 +28,9 @@ while True:
         print("\n____IMPORTS____\n")
 
         while True:
-            print("1. Imported Products")
-            print("2. Import New Product(s)")
-            # print("#. Delete Option for Imported products")
-            # print("#. Update Option for exported products")
+            print("1. Added Products")
+            print("2. Add New Product(s)")
+            
             print("3. Return To The 'Main Page'")
             choose = int(input("Enter your choice: N°_"))
 
@@ -50,8 +49,8 @@ while True:
         print("\n____EXPORTS____\n")
 
         while True:
-            print("1. Exported Products")
-            print("2. Export Sold Product(s)")
+            print("1. Sold Products")
+            print("2. Remove Sold Product(s)")
             # print("#. Delete Option for exported products")
             # print("#. Update Option for exported products")
             print("3. Return To The 'Main Page'")
