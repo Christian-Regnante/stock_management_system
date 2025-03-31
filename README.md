@@ -1,35 +1,58 @@
 # Stock Management System
 
-## Project Overview
-This repository serves as the foundation for our summative project. Each team member is required to contribute by following the outlined steps to ensure smooth collaboration and a better understanding of the system.
+## Overview
+The **Stock Management System** is a command-line interface (CLI) application designed to help businesses efficiently track and manage their inventory. This system enables users to import products, record sales (exports), monitor stock levels, generate reports, and search for specific products, ensuring accurate and organized inventory management.
 
-## Getting Started
-### Cloning the Repository
-1. Clone this repository using the following command:
-   ```sh
-   git clone <repository_url>
-   ```
+## Features
+- **Product Importation:** Add new products to the inventory with details such as name, quantity, unit (KG, L, or Pcs), buying price, selling price, and import date.
+- **Product Exportation:** Register sold products and update stock levels automatically.
+- **Stock Management:** View, update, or remove products from the stock database.
+- **Search Functionality:** Find specific products within the imports, exports, and stock records.
+- **Report Generation:** Create reports summarizing stock activities, including imports, exports, and profit calculations.
+- **User-Friendly Interface:** The menu-driven CLI approach makes navigation seamless.
+- **Error Handling:** Prevents invalid inputs and ensures data accuracy.
+
+## Installation
+To install and run the Stock Management System, follow these steps:
+
+1. Clone this repository:
+```sh
+git clone https://github.com/Christian-Regnante/stock_management_system.git
+```
 2. Navigate to the project directory:
-   ```sh
-   cd stock_management_system
-   ```
+```sh
+cd stock_management_system
+```
+3. Ensure you have Python installed (version 3.x recommended).
+4. Run the application:
+```sh
+python Optistock.py
+```
 
-### Branching
-Each team member must create their own branch before making changes:
-   ```sh
-   git checkout -b <your_branch_name>
-   ```
+## Usage
+1. **Launch the application** and navigate the menu.
+2. **Choose an option** to import products, export sales, check stock, search for items, or generate reports.
+3. **Follow on-screen prompts** to enter necessary details.
+4. **Review confirmations** and system-generated messages.
+5. **Repeat or exit** when finished.
 
-## Contribution Guidelines
-1. Work on the assigned tasks that have been created for you.
-2. Familiarize yourself with the existing functions to understand the project structure.
-3. Ensure you work independently to showcase your unique approach to problem-solving and design.
-4. We will meet on **Wednesday after class** to discuss and review each approach.
+## Project Structure
+```
+stock-management-system/
+│-- connection.py # Handles database connections
+│-- Optistock.py # Main Program
+│-- welcome_msg.py # ASCII Welcome message
+│-- README.md # Project documentation
+```
 
-## Important Notes
-- **Do not use AI tools** to generate your solutions. We will verify and track inconsistencies in explanations.
-- Ensure your work follows best practices and is well-documented.
+## Future Enhancements
+- Implement a graphical user interface (GUI) for better usability.
+- Add reminder functionality
+- Automatate the program to generate reports and save them.
 
-Happy coding!
+## License
+This project is licensed under the MIT License. See `LICENSE` for more details.
 
+---
 
+Happy coding! 
