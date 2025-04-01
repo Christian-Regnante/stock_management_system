@@ -440,7 +440,16 @@ while True:
                                         print("\n____Invalid Input! Please enter a valid number.____\n")
 
                                 buying_price = int(input(f"Enter the buying price per one product(Price Per Unit): "))
+                                  # Validate buying_price
+                                if buying_price > 50000000:
+                                    print("\n____Error: Buying price exceeds the maximum allowed value.____\n")
+                                    break 
+
                                 selling_price = int(input(f"Set the selling price for your product(Price Per Unit): "))
+                                # Validate selling_price
+                                if selling_price > 50000000:  
+                                    print("\n____Error: Selling price exceeds the maximum allowed value.____\n")
+                                    break 
                                 import_date = datetime.now().strftime("%Y-%m-%d")
 
                                 manage_import.add_import(product_name, quantity, unit, buying_price, selling_price, import_date)
