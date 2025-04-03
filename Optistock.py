@@ -343,6 +343,12 @@ class Report:
         print("_" * 60)
         print()
 
+        print("____EXPORTS____")
+        print(f"{'Total Exported Products':<40} : {export_counts:<20}")
+        print(f"{'Total Value Of Sold Products(FRW)':<40} : {sum(row[4] for row in exports):<20}")
+        print(f"{'Total Income(FRW)':<40} : {sum(row[4] for row in exports) - sum(row[4] for row in stock):<20}")
+        print("_" * 60)
+
         cursor.close()
 
     def generate_product_report(self, product_name):
